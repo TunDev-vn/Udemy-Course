@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Gradient Background</title>
+    <style>
+        body {
+            margin: 0;
+        }
+        .background {
+            width: 100vw;
+            height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(300deg, #5ddf84, #009bcf, #4284ff);
+            background-size: 180% 180%;
+            animation: gradient-animation 18s infinite;
+        }
+
+        @keyframes gradient-animation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .background > h1 {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            color: rgb(255, 255, 255);
+            font-size: 40px;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="background">
+        <h1>TUNDEV</h1>
+        <h1>Super Simple Developer</h1>
+    </div>
+</body>
+</html>
