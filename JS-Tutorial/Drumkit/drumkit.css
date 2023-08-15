@@ -1,25 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
 * {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Poppins', sans-serif;
     margin: 0;
+    user-select: none;
 }
 body {
     display: flex;
     align-items: center;
     flex-direction: column;
+    background-color: white !important;
 }
 .logo {
     margin-top: 1%;
-    width: 30%;
+    width: 500px;
+    margin-bottom: 50px;
 }
 .show-shortcuts, .show-ranges {
-
+    width: 130px;
+    background-color: rgb(222, 222, 222);
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin: 10px;
+    text-align: center;
+    transition: all 0.2s;
 }
+.show-shortcuts:hover, .show-ranges:hover {
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+}
+.show-shortcuts:active, .show-ranges:active {
+    box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.8);
+    opacity: 0.7;
+}
+
 .container {
-    margin-top: 5%;
+    margin-top: 7%;
     position: relative;
-    background-image: url("./images/drumkit-bg.png");
-    width: 90vw;
-    height: 70vw;
+    background-image: url("./images/drumkit.png");
+    width: 64.2857vw;
+    height: 50vw;
     background-size: contain;
     background-repeat: no-repeat;
 }
@@ -33,15 +53,21 @@ body {
     align-items: center;
     cursor: pointer;
 }
+.container > div:hover {
+    background-color: rgba(255, 255, 255, 0);
+}
+.container > div:active {
+    background-color: rgba(255, 255, 255, 0);
+}
 .container span {
-    padding: 5px;
-    width: 10px;
-    height: 10px;
+    padding: 2px;
+    width: 18px;
+    height: 18px;
     text-align: center;
     color: white;
     border-radius: 50%;
     background-color: lightseagreen;
-    font-size: 9px;
+    font-size: 13px;
 }
 .hi-hat-open {
     top: 20%;
@@ -122,9 +148,54 @@ body {
     width: 26%;
     height: 11%;
 }
+.tutorials > h3 {
+    margin-bottom: 10px;
+}
+.tutorials span {
+    padding: 1px 5px;
+    background-color: #dedede;
+    border-radius: 5px;
+    font-size: 13px;
+}
+footer {
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    margin-top: 50px;
+    background-color: #ededed;
+}
+footer p {
+    margin-top: 50px;
+    margin-bottom: 100px;
+}
+footer a {
+    text-decoration: none;
+}
+
 .hide-shortcuts {
     visibility: hidden;
 }
 .hide-border {
     border: none !important;
+}
+
+@media screen and (max-width: 992px) {
+    .logo {
+        margin-top: 1%;
+        width: 300px;
+    }
+    .container span {
+        padding: 3px;
+        width: 11px;
+        height: 11px;
+        text-align: center;
+        color: white;
+        border-radius: 50%;
+        background-color: lightseagreen;
+        font-size: 8px;
+    }
+    .container {
+        width: 90vw;
+        height: 70vw;
+    }
 }

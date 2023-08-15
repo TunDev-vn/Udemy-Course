@@ -1,64 +1,110 @@
 const drumTotal = document.querySelectorAll(".container > div");
 
-const drumCount = drumTotal.length;
-for (let i = 0; i < drumCount; i++) {
-    drumTotal[i].addEventListener("click", () => {
-        makeSounds(drumTotal[i].innerText.toLowerCase());
-    });
-}
+var hiHatOpen = new Audio();
+var hiHatClosed = new Audio();
+var hiHatFoot = new Audio();
+var crashCymbal = new Audio();
+var snareDrum = new Audio();
+var snareDrumCs = new Audio();
+var highTom = new Audio();
+var lowTom = new Audio();
+var bassDrum = new Audio();
+var floorTom = new Audio();
+var rideCymbal = new Audio();
 
-document.addEventListener("keypress", (event) => {
-    makeSounds(event.key);
+drumTotal[0].addEventListener("click", () => {
+    hiHatOpen.src = "./sounds/hi-hat-open.mp3";
+    hiHatOpen.play();
+});
+drumTotal[1].addEventListener("click", () => {
+    hiHatClosed.src = "./sounds/hi-hat-closed.mp3";
+    hiHatClosed.play();
+});
+drumTotal[2].addEventListener("click", () => {
+    hiHatFoot.src = "./sounds/hi-hat-foot.mp3";
+    hiHatFoot.play();
+});
+drumTotal[3].addEventListener("click", () => {
+    crashCymbal.src = "./sounds/crash-cymbal.mp3";
+    crashCymbal.play();
+});
+drumTotal[4].addEventListener("click", () => {
+    snareDrum.src = "./sounds/snare-drum.mp3";
+    snareDrum.play();
+});
+drumTotal[5].addEventListener("click", () => {
+    snareDrumCs.src = "./sounds/snare-drum-cs.mp3";
+    snareDrumCs.play();
+});
+drumTotal[6].addEventListener("click", () => {
+    highTom.src = "./sounds/high-tom.mp3";
+    highTom.play();
+});
+drumTotal[7].addEventListener("click", () => {
+    lowTom.src = "./sounds/low-tom.mp3";
+    lowTom.play();
+});
+drumTotal[8].addEventListener("click", () => {
+    bassDrum.src = "./sounds/bass-drum.mp3";
+    bassDrum.play();
+});
+drumTotal[9].addEventListener("click", () => {
+    floorTom.src = "./sounds/floor-tom.mp3";
+    floorTom.play();
+});
+drumTotal[10].addEventListener("click", () => {
+    rideCymbal.src = "./sounds/ride-cymbal.mp3";
+    rideCymbal.play();
 });
 
-function makeSounds(keypress) {
-    switch (keypress) {
+document.addEventListener("keypress", (event) => {
+    switch (event.key) {
         case "e": case "w":
-            var hiHatOpen = new Audio("./sounds/hi-hat-open.mp3");
+            hiHatOpen.src = "./sounds/hi-hat-open.mp3";
             hiHatOpen.play();
             break;
         case "r": case "t":
-            var hiHatClosed = new Audio("./sounds/hi-hat-closed.mp3");
+            hiHatClosed.src = "./sounds/hi-hat-closed.mp3";
             hiHatClosed.play();
             break;
         case "c":
-            var hiHatFoot = new Audio("./sounds/hi-hat-foot.mp3");
+            hiHatFoot.src = "./sounds/hi-hat-foot.mp3";
             hiHatFoot.play();
             break;
         case "y":
-            var crashCymbal = new Audio("./sounds/crash-cymbal.mp3");
+            crashCymbal.src = "./sounds/crash-cymbal.mp3";
             crashCymbal.play();
             break;
         case "s": case "a":
-            var snareDrum = new Audio("./sounds/snare-drum.mp3");
+            snareDrum.src = "./sounds/snare-drum.mp3";
             snareDrum.play();
             break;
         case "d": case "f":
-            var snareDrumCs = new Audio("./sounds/snare-drum-cs.mp3");
+            snareDrumCs.src = "./sounds/snare-drum-cs.mp3";
             snareDrumCs.play();
             break;
         case "g":
-            var highTom = new Audio("./sounds/high-tom.mp3");
+            highTom.src = "./sounds/high-tom.mp3";
             highTom.play();
             break;
         case "h":
-            var lowTom = new Audio("./sounds/low-tom.mp3");
+            lowTom.src = "./sounds/low-tom.mp3";
             lowTom.play();
             break;
         case "x": case "z":
-            var bassDrum = new Audio("./sounds/bass-drum.mp3");
+            bassDrum.src = "./sounds/bass-drum.mp3";
             bassDrum.play();
             break;
         case "j":
-            var floorTom = new Audio("./sounds/floor-tom.mp3");
+            floorTom.src = "./sounds/floor-tom.mp3";
             floorTom.play();
             break;
         case "u":
-            var rideCymbal = new Audio("./sounds/ride-cymbal.mp3");
+            rideCymbal.src = "./sounds/ride-cymbal.mp3";
             rideCymbal.play();
             break;
     }
-}
+});
 
 const showShortcutsElement = document.querySelector(".show-shortcuts");
 const shortcutsElements = document.querySelectorAll(".container span");
